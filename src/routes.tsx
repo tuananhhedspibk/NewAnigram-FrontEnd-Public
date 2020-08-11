@@ -1,5 +1,5 @@
 import React from 'react';
-import { Router, Route, Switch } from 'react-router-dom';
+import { Router, Route, Switch, Redirect } from 'react-router-dom';
 import { createBrowserHistory } from 'history';
 
 import ApolloClient from 'apollo-client';
@@ -23,6 +23,8 @@ import { SignUp } from './components/auth/SignUp';
 import { SignIn } from './components/auth/SignIn';
 import { ActiveAccount } from './components/auth/ActiveAccount';
 import { SendActiveMail } from './components/auth/SendActiveMail';
+
+import { Home } from './components/mains/Home';
 
 import { NotificationSnackBar } from
   './components/notification/NotificationSnackBar';
@@ -86,6 +88,7 @@ export const Routes = () => (
             <Switch>
               <Route path={ROUTES.SignUp} component={SignUp} />
               <Route path={ROUTES.SignIn} component={SignIn} />
+              <Route path={ROUTES.Home} component={Home} />
               <Route
                 path={ROUTES.ActiveAccount}
                 component={ActiveAccount}
@@ -94,6 +97,9 @@ export const Routes = () => (
                 path={ROUTES.SendActiveMail}
                 component={SendActiveMail}
               />
+              <Route path={ROUTES.Root} render={() => (
+                <Redirect to={ROUTES.Home}/>  
+              )}/>
             </Switch>
           </Router>
         </PersistGate>
