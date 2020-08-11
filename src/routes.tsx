@@ -21,6 +21,9 @@ import { store, persistor } from './redux/store';
 
 import { SignUp } from './components/auth/SignUp';
 import { SignIn } from './components/auth/SignIn';
+import { ActiveAccount } from './components/auth/ActiveAccount';
+import { SendActiveMail } from './components/auth/SendActiveMail';
+
 import { NotificationSnackBar } from
   './components/notification/NotificationSnackBar';
 
@@ -83,6 +86,14 @@ export const Routes = () => (
             <Switch>
               <Route path={ROUTES.SignUp} component={SignUp} />
               <Route path={ROUTES.SignIn} component={SignIn} />
+              <Route
+                path={ROUTES.ActiveAccount}
+                component={ActiveAccount}
+              />
+              <Route
+                path={ROUTES.SendActiveMail}
+                component={SendActiveMail}
+              />
             </Switch>
           </Router>
         </PersistGate>
