@@ -26,6 +26,8 @@ import { SendActiveMail } from './components/auth/SendActiveMail';
 
 import { Home } from './components/mains/Home';
 
+import { PostSinglePage } from './components/post/SinglePage';
+
 import { NotificationSnackBar } from
   './components/notification/NotificationSnackBar';
 import { NotificationsIndex } from
@@ -103,6 +105,7 @@ export const Routes = () => (
                 path={ROUTES.Notifications}
                 component={NotificationsIndex}
               />
+              <Route path={`${ROUTES.Posts}/:id`} component={PostSinglePage} />
               <Route path={ROUTES.Root} render={() => (
                 <Redirect to={ROUTES.Home}/>  
               )}/>
