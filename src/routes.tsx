@@ -27,6 +27,7 @@ import { SendActiveMail } from './components/auth/SendActiveMail';
 import { Home } from './components/mains/Home';
 
 import { PostSinglePage } from './components/post/SinglePage';
+import { NotFound404 } from './components/shared/NotFound404';
 
 import { NotificationSnackBar } from
   './components/notification/NotificationSnackBar';
@@ -109,6 +110,7 @@ export const Routes = () => (
               <Route path={ROUTES.Root} render={() => (
                 <Redirect to={ROUTES.Home}/>  
               )}/>
+              <Route status={404} path='*' component={ NotFound404 } />
             </Switch>
           </Router>
         </PersistGate>
