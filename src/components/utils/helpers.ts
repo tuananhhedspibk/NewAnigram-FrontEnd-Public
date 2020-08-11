@@ -23,6 +23,10 @@ export const isPasswordSafe = (password: string): boolean => {
   return password.length >= 8 && PASSWORD_CHECKING_REGEX.test(password);
 }
 
+export const delay = (ms: number) => {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+
 export const logger = (type: number, objectName: string, message: string) => {
   switch (type) {
     case LOG_TYPES.Info: {

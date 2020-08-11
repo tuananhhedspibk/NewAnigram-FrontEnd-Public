@@ -10,6 +10,7 @@ export const ROUTES = {
   ActiveAccount: '/activeaccount',
   SendActiveMail: '/sendactivemail',
   SuggestFriends: '/suggestfriends',
+  Notifications: '/notifications',
 };
 
 export const API_ROUTES = {
@@ -36,6 +37,9 @@ export const USER_SIGNUP_EMAIL = 'user-signup-mail';
 
 export const BATCH_AVATARS_SIZE = 5;
 export const BATCH_COMMENTS_SIZE = 5;
+export const BATCH_ITEMS_SIZE = 9;
+
+export const LOADING_MORE_DELAY = 1500; // ms
 
 export const LOG_TYPES = {
   Info: 0,
