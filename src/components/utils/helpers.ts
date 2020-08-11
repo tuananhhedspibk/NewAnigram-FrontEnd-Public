@@ -3,6 +3,7 @@ import {
   HOUR_IN_MILISECONDS,
   LOG_TYPES,
   MAIL_REGEX,
+  MAX_POST_CONTENT_DISPLAY_LENGTH,
   MINUTE_IN_MILISECONDS,
   NOTIFICATION_TYPES,
   PASSWORD_CHECKING_REGEX,
@@ -11,6 +12,8 @@ import {
   SNACKBAR_TYPES,
   USER_INFO,
 } from './constants';
+import axios from 'axios';
+import * as md5 from 'md5';
 
 export const isEmailValidate = (email: string): boolean => {
   return MAIL_REGEX.test(email);
@@ -33,6 +36,52 @@ export const logger = (type: number, objectName: string, message: string) => {
   }
 }
 
+export const collapsePostContent = (
+  curDisplayContent: string,
+  fullContent: string,
+): string => {
+  if (curDisplayContent.length <= MAX_POST_CONTENT_DISPLAY_LENGTH) {
+    return fullContent;
+  } else {
+    return `${fullContent.substr(0, MAX_POST_CONTENT_DISPLAY_LENGTH - 3)}...`;
+  }
+}
+
+export const postImageInlineStyle = (imgURL: string) => {
+  return {
+    backgroundImage: `url(${imgURL})`,
+    backgroundRepeat: 'no-repeat',
+    backgroundSize: 'cover',
+    cursor: 'pointer',
+    height: '100%',
+    width: '100%',
+  }
+}
+
+export const pushImageToS3 = async (url: string, image: File, options: any) => {
+  return axios.put(url, image, options)
+    .then(_res => true)
+    .catch(err => {
+      logger(LOG_TYPES.Error, 'pushImageToS3', err);
+      return false;
+    });
+}
+
+export const setHrefForUserNameTitle = (userId: string): string => {
+  if (localStorage.getItem(USER_INFO)) {
+    const localStorageUserId =
+      JSON.parse(localStorage.getItem(USER_INFO) as string).id;
+
+    if (userId === localStorageUserId) {
+      return ROUTES.Profile;
+    } else {
+      return `/users/${userId}`;
+    }
+  } else {
+    return '#';
+  }
+}
+
 export const getItemIndexById = (items: any, id: string): number => {
   for (let i = 0; i < items.length; i++) {
     if (items[i].id === id) {
@@ -48,6 +97,17 @@ export const getLocalStorageUserId = (): string => {
     return JSON.parse(localStorage.getItem(USER_INFO) as string).id;
   }
   return '';
+}
+
+export const randomId = (): string => {
+  const timestamp = (new Date().getTime() / 1000 | 0).toString(16);
+  return timestamp + 'xxxxxxxxxxxxxxxx'.replace(/[x]/g, function() {
+    return (Math.random() * 16 | 0).toString(16);
+  }).toLowerCase();
+}
+
+export const hashString = (input: string): string => {
+  return md5.default(input);
 }
 
 export const milisecondsToDateTime = (miliseconds: string) => {
