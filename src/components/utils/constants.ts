@@ -10,7 +10,14 @@ export const ROUTES = {
   SendActiveMail: '/sendactivemail',
 };
 
+export const API_ROUTES = {
+  GraphQL: 'graphql',
+  Subscriptions: 'subscriptions',
+};
+
 export const WEB_HOST = 'http://localhost:5000';
+export const API_HOST = 'http://localhost:4000';
+export const WS_HOST = 'ws://localhost:4000';
 
 export const MAIL_REGEX =
   /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
