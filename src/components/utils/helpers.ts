@@ -26,6 +26,16 @@ export const logger = (type: number, objectName: string, message: string) => {
   }
 }
 
+export const getItemIndexById = (items: any, id: string): number => {
+  for (let i = 0; i < items.length; i++) {
+    if (items[i].id === id) {
+      return i;
+    }
+  }
+
+  return -1;
+}
+
 export const handleSnackBar = (
   status: number,
   type: string,

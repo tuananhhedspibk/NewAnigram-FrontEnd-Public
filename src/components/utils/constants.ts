@@ -39,3 +39,18 @@ export const ERROR_MESSAGES = {
   },
   SystemError: 'Server has error(s)',
 };
+
+
+export const NOTIFY_STATE_STATUSES = {
+  Init: 'Init',
+  FetchingNotifies: 'FetchingNotifies',
+  FetchNotifiesSuccess: 'FetchNotifiesSuccess',
+  FetchNotifiesFailed: 'FetchNotifiesFailed',
+  AddNotifySuccess: 'AddNotifySuccess',
+  AddNotifyFailed: 'AddNotifyFailed',
+  MarkReadNotifiesSuccess: 'MarkReadNotifiesSuccess',
+  MarkReadNotifiesFailed: 'MarkReadNotifiesFailed',
+  MarkReadNotifySuccess: 'MarkReadNotifySuccess',
+  MarkReadNotifyFailed: 'MarkReadNotifyFailed',
+  ResetStateSuccess: 'ResetStateSuccess',
+};
