@@ -28,6 +28,8 @@ import { Home } from './components/mains/Home';
 
 import { NotificationSnackBar } from
   './components/notification/NotificationSnackBar';
+import { NotificationsIndex } from
+  './components/notification/Index';
 
 import {
   API_HOST,
@@ -96,6 +98,10 @@ export const Routes = () => (
               <Route
                 path={ROUTES.SendActiveMail}
                 component={SendActiveMail}
+              />
+              <Route
+                path={ROUTES.Notifications}
+                component={NotificationsIndex}
               />
               <Route path={ROUTES.Root} render={() => (
                 <Redirect to={ROUTES.Home}/>  
