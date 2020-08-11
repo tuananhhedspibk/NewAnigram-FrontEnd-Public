@@ -7,6 +7,7 @@ export const ROUTES = {
   SignUp: '/signup',
   Users: '/users',
   Posts: '/posts',
+  ActiveAccount: '/activeaccount',
   SendActiveMail: '/sendactivemail',
 };
 
