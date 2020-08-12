@@ -31,6 +31,7 @@ import { NotFound404 } from './components/shared/NotFound404';
 
 import { UsersIndex } from './components/user/Index';
 import { UserProfile } from './components/user/Profile';
+import { UserSettings } from './components/user/Settings';
 
 import { NotificationSnackBar } from
   './components/notification/NotificationSnackBar';
@@ -114,7 +115,9 @@ export const Routes = () => (
                 component={NotificationsIndex}
               />
               <Route path={`${ROUTES.Posts}/:id`} component={PostSinglePage} />
+              <Route path={ROUTES.Settings} component={UserSettings} />
               <Route path={ROUTES.Profile} component={UserProfile} />
+              <Route path={`${ROUTES.Users}/:id`} component={UserProfile}/>
               <Route path={ROUTES.Root} render={() => (
                 <Redirect to={ROUTES.Home}/>  
               )}/>

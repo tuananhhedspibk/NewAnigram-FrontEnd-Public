@@ -108,6 +108,23 @@ export const getLocalStorageUserId = (): string => {
   return '';
 }
 
+export const userDataHasChanged = (currentUserData: any): boolean => {
+  const localStorageUserData = JSON.parse(localStorage.getItem(USER_INFO) as string);
+
+  return (
+    currentUserData.id !== localStorageUserData.id
+    || currentUserData.email !== localStorageUserData.email
+    || currentUserData.avatarURL !== localStorageUserData.avatarURL
+    || currentUserData.userName !== localStorageUserData.userName
+    || currentUserData.nickName !== localStorageUserData.nickName
+  );
+}
+
+export const syncLocalStorageUserData = (newUserData: any) => {
+  localStorage.removeItem(USER_INFO);
+  localStorage.setItem(USER_INFO, JSON.stringify(newUserData));
+}
+
 export const randomId = (): string => {
   const timestamp = (new Date().getTime() / 1000 | 0).toString(16);
   return timestamp + 'xxxxxxxxxxxxxxxx'.replace(/[x]/g, function() {
