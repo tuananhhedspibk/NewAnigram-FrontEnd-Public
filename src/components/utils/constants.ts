@@ -36,6 +36,7 @@ export const USER_INFO = 'user-info';
 export const USER_SIGNUP_EMAIL = 'user-signup-mail';
 
 export const NUMBER_USERS_PER_ROW = 3;
+export const NUMBER_POSTS_PER_ROW = 3;
 
 export const BATCH_AVATARS_SIZE = 5;
 export const BATCH_COMMENTS_SIZE = 5;
@@ -143,6 +144,12 @@ export const NOTIFY_STATE_STATUSES = {
   MarkReadNotifyFailed: 'MarkReadNotifyFailed',
   ResetStateSuccess: 'ResetStateSuccess',
 };
+
+export const GRID_POSTS_RATIO = [
+  '1:1:1',
+  '1:2',
+  '2:1',
+];
 
 export type UploadedImage = {
   plainObject: File;

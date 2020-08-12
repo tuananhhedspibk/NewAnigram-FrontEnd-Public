@@ -24,6 +24,10 @@ export const isPasswordSafe = (password: string): boolean => {
   return password.length >= 8 && PASSWORD_CHECKING_REGEX.test(password);
 }
 
+export const getRandomInt = (max: number): number => {
+  return Math.floor(Math.random() * Math.floor(max));
+}
+
 export const delay = (ms: number) => {
   return new Promise(resolve => setTimeout(resolve, ms));
 }
