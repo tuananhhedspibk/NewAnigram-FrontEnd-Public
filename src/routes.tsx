@@ -29,6 +29,8 @@ import { Home } from './components/mains/Home';
 import { PostSinglePage } from './components/post/SinglePage';
 import { NotFound404 } from './components/shared/NotFound404';
 
+import { UsersIndex } from './components/user/Index';
+
 import { NotificationSnackBar } from
   './components/notification/NotificationSnackBar';
 import { NotificationsIndex } from
@@ -94,6 +96,10 @@ export const Routes = () => (
               <Route path={ROUTES.SignUp} component={SignUp} />
               <Route path={ROUTES.SignIn} component={SignIn} />
               <Route path={ROUTES.Home} component={Home} />
+              <Route
+                path={ROUTES.SuggestFriends}
+                component={UsersIndex}
+              />
               <Route
                 path={ROUTES.ActiveAccount}
                 component={ActiveAccount}
