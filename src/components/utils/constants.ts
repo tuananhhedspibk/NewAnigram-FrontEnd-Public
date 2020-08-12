@@ -128,7 +128,20 @@ export const ERROR_MESSAGES = {
       HaveNotCropped: 'Haven\'t cropped image',
     }
   },
+  User: {
+    Get: 'Get user failed',
+    Edit: {
+      Result: 'Edit user failed',
+      DataNotValidate: 'Email or password is not validate',
+    }
+  },
   SystemError: 'Server has error(s)',
+};
+
+export const WARNING_MESSAGES = {
+  User: {
+    Edit: 'You haven\'t changed anything',
+  },
 };
 
 export const NOTIFY_STATE_STATUSES = {
