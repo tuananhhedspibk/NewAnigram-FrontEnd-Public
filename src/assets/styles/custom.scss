@@ -1,0 +1,11 @@
+body {
+  background-color: hsl(180, 100, 100);
+  margin: 0;
+}
+
+.profile-post-body {
+  border-radius: 6px;
+  cursor: pointer;
+  overflow: hidden;
+  position: relative;
+}
