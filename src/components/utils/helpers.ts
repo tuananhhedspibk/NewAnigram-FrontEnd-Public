@@ -1,4 +1,5 @@
 import {
+  BATCH_ITEMS_SIZE,
   DAY_IN_MILISECONDS,
   HOUR_IN_MILISECONDS,
   LOG_TYPES,
@@ -294,6 +295,23 @@ export const handleMarkAllNotifiesAsRead = async (
       dispatch(markReadNotifiesFailed());
     }
   }
+}
+
+export const handleLoadMoreData = (
+  lastShowingItemIndex: number,
+  numberItems: number,
+  setIsLoadingMore: any,
+  setLastShowingItemIndex: any,
+) => {
+  setIsLoadingMore(true);
+
+  if (lastShowingItemIndex + BATCH_ITEMS_SIZE < numberItems) {
+    setLastShowingItemIndex(lastShowingItemIndex + BATCH_ITEMS_SIZE);
+  } else {
+    setLastShowingItemIndex(numberItems - 1);
+  }
+
+  setIsLoadingMore(false);
 }
 
 export const handleLinkClick = (history: any, uri: string) => {

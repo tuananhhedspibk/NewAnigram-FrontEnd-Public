@@ -35,6 +35,8 @@ export const JWT_TOKEN = 'jwt-token';
 export const USER_INFO = 'user-info';
 export const USER_SIGNUP_EMAIL = 'user-signup-mail';
 
+export const NUMBER_USERS_PER_ROW = 3;
+
 export const BATCH_AVATARS_SIZE = 5;
 export const BATCH_COMMENTS_SIZE = 5;
 export const BATCH_ITEMS_SIZE = 9;
